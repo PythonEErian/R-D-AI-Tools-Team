@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فريق البحث وتطوير الأدوات والذكاء الاصطناعي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'tajawal': ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .phase-card {
+            border-right: 4px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .phase-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .tool-chip {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            margin: 0.25rem;
+            transition: all 0.2s ease;
+        }
+        
+        .tool-chip:hover {
+            background-color: #bae6fd;
+            transform: scale(1.05);
+        }
+        
+        .role-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-left: 1rem;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(8px);
+        }
+        
+        .section-anchor {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-tajawal">
+    <!-- شريط التنقل -->
+    <nav class="sticky-nav bg-white/80 shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 space-x-reverse">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                    <i class="fas fa-robot text-white"></i>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800">فريق البحث والتطوير</h1>
+            </div>
+            <div class="flex space-x-6 space-x-reverse">
+                <a href="#plan" class="text-gray-600 hover:text-primary-600 font-medium">خطة العمل</a>
+                <a href="#roles" class="text-gray-600 hover:text-primary-600 font-medium">المسميات الوظيفية</a>
+                <a href="#responsibilities" class="text-gray-600 hover:text-primary-600 font-medium">المسؤوليات</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- الهيدر -->
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">فريق البحث وتطوير الأدوات والذكاء الاصطناعي</h1>
+            <p class="text-xl max-w-3xl mx-auto mb-8">خطة عمل استراتيجية لتأسيس قسم متطور في مجال الأمن السيبراني باستخدام أحدث تقنيات الذكاء الاصطناعي</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center">
+                    <i class="fas fa-users mr-2"></i>
+                    <span>فريق مكون من 7 أفراد</span>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span>خطة 12 شهراً</span>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center">
+                    <i class="fas fa-tools mr-2"></i>
+                    <span>أدوات مفتوحة المصدر</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم خطة العمل -->
+    <section id="plan" class="py-16 bg-white section-anchor">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">خطة عمل القسم (لمدة 12 شهراً)</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">تنفيذ خطة استراتيجية مقسمة إلى ثلاث مراحل رئيسية لتحقيق أهداف القسم</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- مرحلة التأسيس -->
+                <div class="phase-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-r-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="role-icon bg-blue-100 text-blue-600">
+                            <i class="fas fa-tools text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">التأسيس والتهيئة</h3>
+                            <p class="text-blue-600 font-medium">الأشهر 1-3</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-gray-700 mb-2">الأهداف الرئيسية:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>تأسيس البنية التحتية والخوادم</li>
+                            <li>تحديد أولويات المشاريع التطويرية</li>
+                            <li>بناء مهارات الفريق وتدريبهم</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-2">الأدوات والتقنيات:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="tool-chip">Python</span>
+                            <span class="tool-chip">VS Code</span>
+                            <span class="tool-chip">Git</span>
+                            <span class="tool-chip">Docker</span>
+                            <span class="tool-chip">Local Servers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مرحلة التطوير -->
+                <div class="phase-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-r-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="role-icon bg-green-100 text-green-600">
+                            <i class="fas fa-code-branch text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">التطوير والنمذجة</h3>
+                            <p class="text-green-600 font-medium">الأشهر 4-9</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-gray-700 mb-2">الأهداف الرئيسية:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>تطوير النماذج الأولية (Prototype)</li>
+                            <li>بناء واجهات برمجية (APIs)</li>
+                            <li>الاختبار الداخلي للنماذج</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-2">الأدوات والتقنيات:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="tool-chip">Scikit-learn</span>
+                            <span class="tool-chip">TensorFlow</span>
+                            <span class="tool-chip">PyTorch</span>
+                            <span class="tool-chip">FastAPI</span>
+                            <span class="tool-chip">MLflow</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مرحلة التدشين -->
+                <div class="phase-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border-r-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="role-icon bg-purple-100 text-purple-600">
+                            <i class="fas fa-rocket text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">التدشين والتحسين</h3>
+                            <p class="text-purple-600 font-medium">الأشهر 10-12</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-gray-700 mb-2">الأهداف الرئيسية:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>النشر المحدود للأدوات</li>
+                            <li>جمع التغذية الراجعة والتحسين</li>
+                            <li>التخطيط للعام القادم</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-2">الأدوات والتقنيات:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="tool-chip">Docker</span>
+                            <span class="tool-chip">Nginx</span>
+                            <span class="tool-chip">ELK Stack</span>
+                            <span class="tool-chip">Wiki.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المسميات الوظيفية -->
+    <section id="roles" class="py-16 bg-gray-50 section-anchor">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">المسميات الوظيفية للفريق</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">هيكل الفريق المكون من 7 أفراد مع تقسيم واضح للمسؤوليات</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- مدير الفريق -->
+                <div class="card-hover bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">مدير فريق البحث والتطوير</h3>
+                                <p class="text-primary-600 font-medium">عدد: 1</p>
+                            </div>
+                            <div class="role-icon bg-primary-100 text-primary-600">
+                                <i class="fas fa-user-tie text-xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">المسؤول عن التخطيط، الإشراف، والتنسيق بين الفريقين وضمان تحقيق الأهداف</p>
+                    </div>
+                </div>
+                
+                <!-- مهندس ذكاء اصطناعي -->
+                <div class="card-hover bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">مهندس ذكاء اصطناعي أمني</h3>
+                                <p class="text-primary-600 font-medium">عدد: 2</p>
+                            </div>
+                            <div class="role-icon bg-yellow-100 text-yellow-600">
+                                <i class="fas fa-brain text-xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">يركز على تطوير وتدريب النماذج التنبؤية والتعلم الآلي للتطبيقات الأمنية</p>
+                    </div>
+                </div>
+                
+                <!-- مهندس برمجيات -->
+                <div class="card-hover bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">مهندس برمجيات أمنية</h3>
+                                <p class="text-primary-600 font-medium">عدد: 2</p>
+                            </div>
+                            <div class="role-icon bg-green-100 text-green-600">
+                                <i class="fas fa-laptop-code text-xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">يركز على كتابة الكود، بناء الواجهات البرمجية، ودمج النماذج في أدوات قابلة للاستخدام</p>
+                    </div>
+                </div>
+                
+                <!-- مهندس بيانات -->
+                <div class="card-hover bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">مهندس بيانات أمنية</h3>
+                                <p class="text-primary-600 font-medium">عدد: 2</p>
+                            </div>
+                            <div class="role-icon bg-purple-100 text-purple-600">
+                                <i class="fas fa-database text-xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">مسؤول عن جمع، تنظيف، وتجهيز البيانات المستخدمة في تدريب النماذج وإدارة البنية التحتية</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- تقسيم الفريق -->
+            <div class="mt-12 bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">التقسيم المقترح للفريق</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 rounded-lg p-6">
+                        <h4 class="text-lg font-bold text-blue-700 mb-4 text-center">الفريق أ (تركيز على النماذج والبيانات)</h4>
+                        <div class="flex justify-center space-x-4 space-x-reverse">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-brain text-blue-600 text-xl"></i>
+                                </div>
+                                <p class="text-sm font-medium">مهندس ذكاء اصطناعي</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-database text-purple-600 text-xl"></i>
+                                </div>
+                                <p class="text-sm font-medium">مهندس بيانات</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 rounded-lg p-6">
+                        <h4 class="text-lg font-bold text-green-700 mb-4 text-center">الفريق ب (تركيز على التطوير والدمج)</h4>
+                        <div class="flex justify-center space-x-4 space-x-reverse">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-brain text-yellow-600 text-xl"></i>
+                                </div>
+                                <p class="text-sm font-medium">مهندس ذكاء اصطناعي</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-laptop-code text-green-600 text-xl"></i>
+                                </div>
+                                <p class="text-sm font-medium">مهندس برمجيات</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center mt-6 text-gray-600">المهندسان المتبقيان يعملان بشكل مرن بين الفريقين حسب متطلبات المشروع</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المسؤوليات -->
+    <section id="responsibilities" class="py-16 bg-white section-anchor">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">المهام والمسؤوليات لكل موظف</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">توزيع واضح للمسؤوليات بين أعضاء الفريق لضمان تحقيق الأهداف بكفاءة</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- مدير الفريق -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="role-icon bg-blue-100 text-blue-600">
+                            <i class="fas fa-user-tie text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">مدير فريق البحث والتطوير</h3>
+                            <p class="text-blue-600">المسؤوليات الاستراتيجية والتشغيلية</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-2">المسؤوليات الاستراتيجية:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm">
+                                <li>وضع خطة عمل القسم ومتابعة تنفيذها</li>
+                                <li>التواصل مع إدارة  وأقسام الأمن الأخرى</li>
+                                <li>تقييم أداء فريق العمل</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-2">المسؤوليات التشغيلية:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm">
+                                <li>ترتيب أولويات المشاريع وتوزيع المهام</li>
+                                <li>التأكد من جودة المخرجات وموثوقيتها</li>
+                                <li>حل العقبات التقنية والإدارية</li>
+                                <li>الإشراف على عملية النشر والتكامل</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مهندس الذكاء الاصطناعي -->
+                <div class="card-hover bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="role-icon bg-yellow-100 text-yellow-600">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">مهندس الذكاء الاصطناعي الأمني</h3>
+                            <p class="text-yellow-600">تطوير النماذج التنبؤية والتعلم الآلي</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-2">المسؤوليات الأساسية:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>البحث واختيار خوارزميات التعلم الآلي المناسبة</li>
+                            <li>تصميم وتنفيذ نماذج للكشف عن التهديدات</li>
+                            <li>تدريب النماذج وضبط معاملاتها</li>
+                            <li>مواكبة أحدث الأبحاث في مجال الأمن والذكاء الاصطناعي</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-bold text-gray-700 mb-2">الأدوات والتقنيات:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="tool-chip">Python</span>
+                            <span class="tool-chip">Jupyter</span>
+                            <span class="tool-chip">Scikit-learn</span>
+                            <span class="tool-chip">TensorFlow</span>
+                            <span class="tool-chip">PyTorch</span>
+                            <span class="tool-chip">Pandas</span>
+                            <span class="tool-chip">NumPy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مهندس البرمجيات -->
+                <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="role-icon bg-green-100 text-green-600">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">مهندس البرمجيات الأمنية</h3>
+                            <p class="text-green-600">تطوير الأدوات والواجهات البرمجية</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-2">المسؤوليات الأساسية:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>تطوير البرامج النصية والأدوات الأمنية الآلية</li>
+                            <li>بناء واجهات برمجية (APIs) باستخدام FastAPI/Flask</li>
+                            <li>حزم النماذج في حاويات (Docker)</li>
+                            <li>كتابة كود نظيف وموثوق وإجراء اختبارات الوحدة</li>
+                            <li>دمج الأدوات المطورة مع الأنظمة القائمة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-bold text-gray-700 mb-2">الأدوات والتقنيات:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="tool-chip">Python</span>
+                            <span class="tool-chip">Bash</span>
+                            <span class="tool-chip">Git</span>
+                            <span class="tool-chip">Docker</span>
+                            <span class="tool-chip">FastAPI</span>
+                            <span class="tool-chip">Flask</span>
+                            <span class="tool-chip">Linux</span>
+                            <span class="tool-chip">SQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مهندس البيانات -->
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="role-icon bg-purple-100 text-purple-600">
+                            <i class="fas fa-database text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">مهندس البيانات الأمنية</h3>
+                            <p class="text-purple-600">إدارة البيانات والبنية التحتية</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-2">المسؤوليات الأساسية:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>جمع البيانات الأمنية من مصادر مفتوحة وداخلية</li>
+                            <li>تنظيف البيانات وتهيئتها للتدريب</li>
+                            <li>إدارة البنية التحتية للبيانات والخوادم الداخلية</li>
+                            <li>مراقبة أداء النماذج بعد نشرها</li>
+                            <li>تطبيق مبادئ أمن البيانات وحمايتها</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-bold text-gray-700 mb-2">الأدوات والتقنيات:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="tool-chip">Python</span>
+                            <span class="tool-chip">Pandas</span>
+                            <span class="tool-chip">BeautifulSoup</span>
+                            <span class="tool-chip">SQL</span>
+                            <span class="tool-chip">Elasticsearch</span>
+                            <span class="tool-chip">Docker</span>
+                            <span class="tool-chip">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأدوات -->
+    <section id="tools" class="py-16 bg-gray-50 section-anchor">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">الأدوات والتقنيات المستخدمة</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">اعتماد على أدوات مفتوحة المصدر ومجانية لتقليل التكاليف وزيادة المرونة</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- لغة البرمجة -->
+                <div class="card-hover bg-white rounded-xl shadow-md p-6">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-python text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">لغة البرمجة</h3>
+                    </div>
+                    <p class="text-gray-600 text-center text-sm">المعيار الذهبي في هذا المجال لمكتباته الغنية</p>
+                    <div class="mt-4 flex justify-center">
+                        <span class="tool-chip">Python</span>
+                    </div>
+                </div>
+                
+                <!-- التطوير والتحكم -->
+                <div class="card-hover bg-white rounded-xl shadow-md p-6">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-code text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">التطوير والتحكم</h3>
+                    </div>
+                    <p class="text-gray-600 text-center text-sm">أدوات تطوير ومراقبة الإصدارات</p>
+                    <div class="mt-4 flex flex-wrap justify-center">
+                        <span class="tool-chip">VS Code</span>
+                        <span class="tool-chip">Git</span>
+                        <span class="tool-chip">Gitea</span>
+                    </div>
+                </div>
+                
+                <!-- الذكاء الاصطناعي -->
+                <div class="card-hover bg-white rounded-xl shadow-md p-6">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-robot text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">الذكاء الاصطناعي</h3>
+                    </div>
+                    <p class="text-gray-600 text-center text-sm">مكتبات التعلم الآلي والشبكات العصبية</p>
+                    <div class="mt-4 flex flex-wrap justify-center">
+                        <span class="tool-chip">Scikit-learn</span>
+                        <span class="tool-chip">TensorFlow</span>
+                        <span class="tool-chip">PyTorch</span>
+                    </div>
+                </div>
+                
+                <!-- الواجهات البرمجية -->
+                <div class="card-hover bg-white rounded-xl shadow-md p-6">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-plug text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">الواجهات البرمجية</h3>
+                    </div>
+                    <p class="text-gray-600 text-center text-sm">أطر عمل لتطوير واجهات برمجية API</p>
+                    <div class="mt-4 flex flex-wrap justify-center">
+                        <span class="tool-chip">FastAPI</span>
+                        <span class="tool-chip">Flask</span>
+                    </div>
+                </div>
+                
+                <!-- الحاويات والنشر -->
+                <div class="card-hover bg-white rounded-xl shadow-md p-6">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-docker text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">الحاويات والنشر</h3>
+                    </div>
+                    <p class="text-gray-600 text-center text-sm">تعليب وتوحيد البيئة التشغيلية</p>
+                    <div class="mt-4 flex flex-wrap justify-center">
+                        <span class="tool-chip">Docker</span>
+                        <span class="tool-chip">Nginx</span>
+                    </div>
+                </div>
+                
+                <!-- البيانات وقواعد البيانات -->
+                <div class="card-hover bg-white rounded-xl shadow-md p-6">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-database text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">البيانات وقواعد البيانات</h3>
+                    </div>
+                    <p class="text-gray-600 text-center text-sm">أدوات معالجة البيانات وقواعد البيانات</p>
+                    <div class="mt-4 flex flex-wrap justify-center">
+                        <span class="tool-chip">Pandas</span>
+                        <span class="tool-chip">SQLite</span>
+                        <span class="tool-chip">PostgreSQL</span>
+                        <span class="tool-chip">Elasticsearch</span>
+                    </div>
+                </div>
+                
+                <!-- المراقبة والتصور -->
+                <div class="card-hover bg-white rounded-xl shadow-md p-6">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-chart-line text-teal-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">المراقبة والتصور</h3>
+                    </div>
+                    <p class="text-gray-600 text-center text-sm">أنظمة المراقبة وجمع السجلات</p>
+                    <div class="mt-4 flex flex-wrap justify-center">
+                        <span class="tool-chip">ELK Stack</span>
+                    </div>
+                </div>
+                
+                <!-- التوثيق -->
+                <div class="card-hover bg-white rounded-xl shadow-md p-6">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-book text-gray-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">التوثيق</h3>
+                    </div>
+                    <p class="text-gray-600 text-center text-sm">أنظمة إدارة المعرفة والتوثيق</p>
+                    <div class="mt-4 flex flex-wrap justify-center">
+                        <span class="tool-chip">Wiki.js</span>
+                        <span class="tool-chip">Markdown</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التوصيات -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">توصيات عملية</h2>
+                <p class="text-primary-100 max-w-2xl mx-auto">نصائح عملية لتنفيذ الخطة في بيئة ذات موارد محدودة</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">مجانية ومفتوحة المصدر</h3>
+                    <p class="text-sm">البدء بالمجاني والمفتوح المصدر دائماً لتجنب التكاليف المرتفعة</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-python text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">التركيز على Python و Go</h3>
+                    <p class="text-sm">هما عمودا القسم الفقري للتطوير مع التركيز على Python للذكاء الاصطناعي</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-microchip text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">الاستثمار في أجهزة GPU</h3>
+                    <p class="text-sm">حتى لو كانت قليلة، فهي حاسمة لتجربة وتشغيل النماذج المحلية</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-database text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">بناء Dataset محلي</h3>
+                    <p class="text-sm">البيانات هي الذهب الجديد. ابدأ فوراً في تجميع وتنظيف البيانات الأمنية</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">تبني أدوات ProjectDiscovery</h3>
+                    <p class="text-sm">هي مستقبل أتمتة الأمن ومكتوبة بـ Go، مما يجعلها سريعة وسهلة النشر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">خارطة الطريق</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">التأسيس والتهيئة</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-center">الأشهر 1-3: بناء البنية التحتية، تحديد الأولويات، تدريب الفريق</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">التطوير والنمذجة</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-center">الأشهر 4-9: بناء النماذج، التكامل، الاختبار الداخلي</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">التدشين والتحسين</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-center">الأشهر 10-12: النشر، جمع التغذية الراجعة، التخطيط للمستقبل</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-16 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">الجدول الزمني التفصيلي</h2>
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-500 to-purple-500 h-full hidden md:block"></div>
+          
+          <div class="space-y-12">
+            <!-- Phase 1 -->
+            <div class="flex items-center">
+              <div class="flex-1 text-right pr-8 hidden md:block">
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">التأسيس والتهيئة</h3>
+                <p class="text-gray-600 dark:text-gray-300">الأشهر 1-3: بناء البنية التحتية والبدء بالمشاريع الأولى</p>
+              </div>
+              <div class="w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg mx-auto md:mx-0"></div>
+              <div class="flex-1 pl-8 hidden md:block">
+                <div class="bg-blue-50 dark:bg-gray-800 rounded-lg p-4">
+                  <p class="text-sm text-gray-500 dark:text-gray-400">الأشهر 1-3</p>
+                  <div class="mt-2 space-y-3">
+                    <div>
+                      <h4 class="font-semibold text-blue-700 dark:text-blue-300">الأهداف الرئيسية:</h4>
+                      <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                        <li>• إعداد بيئة التطوير والخوادم المحلية</li>
+                        <li>• تجميع مجموعة بيانات أولية للتدريب</li>
+                        <li>• تدريب الفريق على الأدوات الأساسية</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-blue-700 dark:text-blue-300">المشاريع المستهدفة:</h4>
+                      <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                        <li><strong>أداة كشف البرمجيات الخبيثة الأساسية:</strong> نموذج تعلم آلي بسيط لتصنيف الملفات</li>
+                        <li><strong>محلل شهادات الأمان:</strong> أداة تحليل شهادات SSL/TLS للكشف عن الشهادات المزيفة</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Phase 2 -->
+            <div class="flex items-center">
+              <div class="flex-1 pr-8 hidden md:block">
+                <div class="bg-green-50 dark:bg-gray-800 rounded-lg p-4">
+                  <p class="text-sm text-gray-500 dark:text-gray-400">الأشهر 4-9</p>
+                  <div class="mt-2 space-y-3">
+                    <div>
+                      <h4 class="font-semibold text-green-700 dark:text-green-300">الأهداف الرئيسية:</h4>
+                      <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                        <li>• تطوير نماذج متقدمة وتدريبها</li>
+                        <li>• بناء واجهات برمجية API للتكامل</li>
+                        <li>• اختبار شامل وتحسين الأداء</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-green-700 dark:text-green-300">المشاريع المتقدمة:</h4>
+                      <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                        <li><strong>نظام كشف التسلل الشبكي (NIDS):</strong> نموذج يعتمد على تحليل تدفق البيانات الشبكية</li>
+                        <li><strong>محرك تحليل التهديدات الذكي:</strong> استخدام LLM لتحليل تقارير التهديدات واستخراج المؤشرات</li>
+                        <li><strong>أداة مسح الثغرات الآلية:</strong> دمج مع أدوات مثل Nuclei لتحسين الكشف</li>
+                        <li><strong>نظام مراقبة السلوكيات غير الطبيعية:</strong> تحليل سجلات النظام باستخدام خوارزميات التعلم غير المشرف</li>
+                        <li><strong>مولد قواعد SIEM الذكي:</strong> استخدام Llama لإنشاء قواعد كشف مخصصة</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-4 h-4 bg-green-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg mx-auto md:mx-0"></div>
+              <div class="flex-1 pl-8 text-left hidden md:block">
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">التطوير والنمذجة</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">تطوير الأدوات الأمنية المتقدمة وتدريب النماذج</p>
+              </div>
+            </div>
+            
+            <!-- Phase 3 -->
+            <div class="flex items-center">
+              <div class="flex-1 text-right pr-8 hidden md:block">
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">التدشين والتحسين</h3>
+                <p class="text-gray-600 dark:text-gray-300">الأشهر 10-12: النشر والتوسع والتحسين المستمر</p>
+              </div>
+              <div class="w-4 h-4 bg-purple-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg mx-auto md:mx-0"></div>
+              <div class="flex-1 pl-8 hidden md:block">
+                <div class="bg-purple-50 dark:bg-gray-800 rounded-lg p-4">
+                  <p class="text-sm text-gray-500 dark:text-gray-400">الأشهر 10-12</p>
+                  <div class="mt-2 space-y-3">
+                    <div>
+                      <h4 class="font-semibold text-purple-700 dark:text-purple-300">الأهداف الرئيسية:</h4>
+                      <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                        <li>• نشر الأدوات في بيئة الإنتاج</li>
+                        <li>• جمع تعليقات المستخدمين وتحسين الأداء</li>
+                        <li>• التخطيط للمشاريع المستقبلية</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-purple-700 dark:text-purple-300">المشاريع المكتملة والمخططة:</h4>
+                      <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                        <li><strong>منصة الأمن السيبراني المتكاملة:</strong> دمج جميع الأدوات في منصة واحدة</li>
+                        <li><strong>نظام الاستجابة الآلية للحوادث:</strong> أتمتة الاستجابة الأولية للتهديدات المكتشفة</li>
+                        <li><strong>لوحة تحكم الأمن الذكية:</strong> تصور شامل للوضع الأمني باستخدام ELK Stack</li>
+                        <li><strong>أداة التحقق من الأمان للتطبيقات:</strong> فحص أمان الكود والتطبيقات</li>
+                        <li><strong>نظام التدريب المستمر للنماذج:</strong> تحديث النماذج ببيانات جديدة تلقائياً</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mobile Timeline -->
+        <div class="md:hidden space-y-6">
+          <div class="bg-blue-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">التأسيس والتهيئة</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">الأشهر 1-3</p>
+            <div class="mt-3 space-y-3">
+              <div>
+                <h4 class="font-semibold text-blue-700 dark:text-blue-300">الأهداف:</h4>
+                <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                  <li>• إعداد بيئة التطوير والخوادم</li>
+                  <li>• تجميع مجموعة بيانات أولية</li>
+                  <li>• تدريب الفريق على الأدوات</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-blue-700 dark:text-blue-300">المشاريع:</h4>
+                <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                  <li><strong>كشف البرمجيات الخبيثة:</strong> نموذج تصنيف الملفات</li>
+                  <li><strong>محلل شهادات SSL:</strong> كشف الشهادات المزيفة</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-green-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">التطوير والنمذجة</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">الأشهر 4-9</p>
+            <div class="mt-3 space-y-3">
+              <div>
+                <h4 class="font-semibold text-green-700 dark:text-green-300">الأهداف:</h4>
+                <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                  <li>• تطوير نماذج متقدمة</li>
+                  <li>• بناء واجهات برمجية API</li>
+                  <li>• اختبار شامل وتحسين</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-green-700 dark:text-green-300">المشاريع:</h4>
+                <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                  <li><strong>NIDS:</strong> كشف التسلل الشبكي</li>
+                  <li><strong>محرك تحليل التهديدات:</strong> استخدام LLM</li>
+                  <li><strong>مسح الثغرات الآلية:</strong> دمج مع Nuclei</li>
+                  <li><strong>مراقبة السلوكيات:</strong> تحليل سجلات النظام</li>
+                  <li><strong>مولد قواعد SIEM:</strong> قواعد ذكية</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-purple-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">التدشين والتحسين</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">الأشهر 10-12</p>
+            <div class="mt-3 space-y-3">
+              <div>
+                <h4 class="font-semibold text-purple-700 dark:text-purple-300">الأهداف:</h4>
+                <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                  <li>• نشر في بيئة الإنتاج</li>
+                  <li>• جمع تعليقات المستخدمين</li>
+                  <li>• التخطيط للمستقبل</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-purple-700 dark:text-purple-300">المشاريع:</h4>
+                <ul class="text-gray-700 dark:text-gray-300 text-sm">
+                  <li><strong>منصة متكاملة:</strong> دمج جميع الأدوات</li>
+                  <li><strong>استجابة آلية للحوادث:</strong> أتمتة الاستجابة</li>
+                  <li><strong>لوحة تحكم ذكية:</strong> تصور شامل</li>
+                  <li><strong>تحقق أمان التطبيقات:</strong> فحص الكود</li>
+                  <li><strong>تدريب مستمر:</strong> تحديث النماذج</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">فريق البحث وتطوير الأدوات والذكاء الاصطناعي</h3>
+                    <p class="text-gray-400">خطة عمل استراتيجية لتأسيس قسم متطور</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">تم إعداد هذا التقرير بواسطة</p>
+                    <p class="font-bold text-primary-300">المهندس إبراهيم الأسعد</p>
+                    <p class="text-sm text-gray-500 mt-2">جميع الحقوق محفوظة © 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.phase-card, .card-hover').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Add CSS for fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fade-in {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in {
+                animation: fade-in 0.6s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
